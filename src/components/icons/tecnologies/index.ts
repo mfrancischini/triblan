@@ -31,7 +31,7 @@ import Twilio from './TwilioIcon.astro'
 export {
   Astro,
   Bootstrap,
-  Docker,     
+  Docker,
   Express,
   Git,
   Github,

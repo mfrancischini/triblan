@@ -1,19 +1,36 @@
 ---
-import { experience } from "../../constants/experience"
-import { ExternalLinkIcon } from "../icons/contact"
-import Badge from "./Badge.astro"
+import { experience } from "../../constants/experience";
+import { ExternalLinkIcon } from "../icons/contact";
+import Badge from "./Badge.astro";
+import PulseDot from "./PulseDot.astro";
 ---
 
 <section>
   {
     experience.map((job) => {
-      const { company, period, title, technologies, exp, location, modality, link } = job
+      const {
+        company,
+        period,
+        title,
+        technologies,
+        exp,
+        location,
+        modality,
+        link,
+        currentJob,
+      } = job;
       return (
         <article class="border-l pb-12 border-line2 pl-8 relative">
-          <div class="absolute left-0 top-1.5 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-lime ring-4 ring-base"></div>
+          {currentJob ? (
+            <PulseDot className="absolute left-0 top-1.5 -translate-x-1/2" />
+          ) : (
+            <div class="absolute left-0 top-1.5 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-muted/80 ring-4 ring-base" />
+          )}
           <h3 class="flex flex-col sm:flex-row items-baseline justify-between mb-1 text-xl font-medium">
             {title}
-            <span class="mt- text-xs text-faint tracking-wider font-medium font-mono">{period}</span>
+            <span class="mt- text-xs text-faint tracking-wider font-medium font-mono">
+              {period}
+            </span>
           </h3>
           <a
             href={link}
@@ -28,21 +45,17 @@ import Badge from "./Badge.astro"
             {modality && <span>&bull; {modality}</span>}
           </span>
           <ul class="mt-4 marker:text-lime text-muted font-mono tracking-wide text-pretty text-sm list-disc pl-4">
-            {
-              exp?.map((item) => (
-                <li class="mb-2">{item}</li>
-              ))
-            }
+            {exp?.map((item) => (
+              <li class="mb-2">{item}</li>
+            ))}
           </ul>
           <section class="flex flex-wrap gap-2 mt-4">
-            {
-              technologies?.map((tech) => (
-                <Badge size="md" label={tech} />
-              ))
-            }
+            {technologies?.map((tech) => (
+              <Badge size="md" label={tech} />
+            ))}
           </section>
         </article>
-      )
+      );
     })
   }
 </section>

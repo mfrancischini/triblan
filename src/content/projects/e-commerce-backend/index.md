@@ -1,5 +1,5 @@
 ---
-title: "Cart Shopping - API"
+title: "E-Commerce REST API Backend"
 description: "API de comercio electrónico desarrollada con Node.js y TypeScript, que implementa autenticación JWT, gestión de productos y carrito de compras, utilizando PostgreSQL, Sequelize y una arquitectura modular escalable."
 image: "./cover.webp"
 technologies: ["Node", "Postgres", "Sequelize", "Express", "TypeScript", "Docker", "Jwt"]

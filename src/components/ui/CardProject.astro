@@ -19,20 +19,21 @@ const { title, description, image, technologies } = project.data;
     class="card-overlay absolute inset-0 z-1 rounded-xl"
     aria-label={`Ver detalles de ${title}`}
   />
-  <fugure class="w-full sm:w-[45%] shrink-0 overflow-hidden bg-black">
-    <Image
-      src={image}      
-      alt={`Screenshot of ${title}`}
-      width="640"
-      height="360"
-      quality={75}
-      loading="lazy"
-      decoding="async"
-      format='webp'
-      class="sm:h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-      transition:name={`project-${slug}`}
-    />
-  </fugure>
+  <figure class="w-full sm:w-[45%] shrink-0 overflow-hidden bg-black">
+    { image && 
+      <Image
+        src={image}      
+        alt={`Screenshot of ${title}`}
+        width="640"
+        height="360"
+        quality={75}
+        loading="lazy"
+        format='webp'
+        class="sm:h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+        transition:name={`project-${slug}`}
+      />
+    }
+  </figure>
 
   <div class="flex flex-col justify-between p-4 sm:p-5 flex-1 min-w-0">
     <div>

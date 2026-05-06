@@ -37,20 +37,21 @@ const imageLeft = featuredIndex % 2 === 0;
       imageLeft ? 'md:order-1' : 'md:order-2',
       ]}
   >
-    <Image
-      src={image}
-      alt={`Screenshot of ${title}`}
-      width={960}
-      height={540}
-      widths={[320, 640, 960]}
-      sizes="(max-width: 480px) 320px, (max-width: 1024px) 640px, 960px"
-      quality={80}
-      loading="lazy"
-      decoding="async"
-      format='webp'
-      class="sm:h-full object-cover object-top-left transition-transform duration-500 group-hover:scale-[1.04]"
-      transition:name={`project-${slug}`}
-    />
+    { image && 
+      <Image
+        src={image}
+        alt={`Screenshot of ${title}`}
+        width={960}
+        height={540}
+        widths={[320, 640, 960]}
+        sizes="(max-width: 480px) 320px, (max-width: 1024px) 640px, 960px"
+        quality={80}
+        loading="lazy"
+        format='webp'
+        class="sm:h-full object-cover object-top-left transition-transform duration-500 group-hover:scale-[1.04]"
+        transition:name={`project-${slug}`}
+      />
+    }
     {type && (    
       <span
         class="absolute top-3 left-3 font-mono text-[10px] tracking-widest uppercase px-2 py-1 rounded bg-black/70 backdrop-blur-sm text-white/60 border border-white/10"

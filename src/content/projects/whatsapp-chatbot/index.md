@@ -1,41 +1,112 @@
 ---
-title: "WhatsApp Chatbot - Cotizador de Arquitectura"
-description: "Servidor backend que implementa un chatbot de WhatsApp vía Twilio para cotizaciones automatizadas de proyectos de construcción. Los usuarios interactúan a través de WhatsApp para seleccionar tipo de trabajo (habitación, baño, fachada) y recibir estimados de precio en MXN según los m² ingresados."
+title: "WhatsApp Appointment Chatbot"
+description: "Conversational AI chatbot for appointment scheduling via WhatsApp, built with Node.js, TypeScript, Express, PostgreSQL, and Twilio."
+date: 2026-05-04
+technologies: ["Twilio", "WhatsApp", "Node.js", "TypeScript", "Express", "PostgreSQL", "SequelizeORM", "Docker"]
 image: "./cover.webp"
-technologies: ["Node.js", "TypeScript", "Express.js", "Twilio", "dotenv", "Morgan"]
-featured: false
-date: 2025-10-08
+githubUrl: "https://github.com/Chencho34/whatsapp-chatbot-twilio"
 type: "backend"
-# githubUrl: "https://github.com/Chencho34/shopping-cart"
-# demoUrl: "https://cart-shopping-app.netlify.app/"
-draft: true
+featured: true
 ---
 
 ## Acerca de este proyecto
 
-DevFlow comenzó como una herramienta interna para resolver un problema real: los ingenieros perdían demasiado tiempo cambiando de contexto entre GitHub, Jira, Slack y paneles de CI. La idea era simple — una sola pantalla, un solo refresh, panorama completo.
+Un chatbot conversacional de nivel productivo que permite a los clientes reservar citas mediante WhatsApp sin necesidad de una aplicación móvil o sitio web. El sistema gestiona el flujo completo de reservación: selección de servicio, elección de fecha/hora y confirmación, todo mediante conversación natural.
+
+Construido con una arquitectura basada en **Máquina de Estados Finitos (FSM)**, administra conversaciones complejas de múltiples pasos manteniendo el estado de la sesión y enviando recordatorios automáticos 24 horas antes de cada cita.
+
+El chatbot se integra directamente con la API de WhatsApp de Twilio, transformando un canal de mensajería simple en un sistema completo de agendamiento.
+
+---
+
+## Problema de Negocio
+
+Las barberías tradicionalmente dependen de llamadas telefónicas o visitas presenciales para agendar citas, lo cual genera fricción para los clientes y carga administrativa para los dueños.
+
+Desarrollar una aplicación móvil personalizada suele ser costoso y difícil de adoptar. Sin embargo, **WhatsApp ya está instalado en el teléfono de casi todos los clientes**.
+
+Este proyecto resuelve el problema haciendo que reservar una cita sea tan fácil como enviar un mensaje, mientras automatiza recordatorios que normalmente requerirían seguimiento manual del personal.
+
+---
+
+## Solución
+
+El chatbot recibe mensajes entrantes de WhatsApp mediante un webhook de Twilio, los enruta hacia una API en Express y los procesa a través de un **Conversation Manager** que implementa una FSM.
+
+Cada sesión de usuario mantiene:
+
+- Estado actual (ver servicios, seleccionar fecha, confirmar cita)
+- Datos contextuales (servicio elegido, hora preferida, nombre del cliente)
+
+Una vez confirmada la cita:
+
+- Se guarda en PostgreSQL
+- Un cron job se ejecuta cada hora
+- Detecta citas confirmadas para el día siguiente
+- Envía recordatorios automáticos por WhatsApp
+
+---
+
+## Funcionalidades Principales
+
+- Reservación conversacional de citas por WhatsApp (sin instalar apps)
+- Menú interactivo con servicios, horarios e información del negocio
+- Recordatorios automáticos 24 horas antes vía WhatsApp
+- Registro de clientes y persistencia de datos
+- Gestión de conversaciones multi-paso con FSM
+- Envío y recepción de mensajes en tiempo real
+- Disponibilidad dinámica de múltiples días
+- Generación automática de horarios
+- Base de datos PostgreSQL persistente
+
+---
 
 ## Arquitectura
 
-El backend es un servicio Node.js con una API REST + WebSocket. PostgreSQL gestiona la persistencia de métricas y snapshots. Redis actúa como intermediario para el pub/sub de eventos en tiempo real entre el receptor de webhooks de GitHub y los clientes del dashboard.
+## Estructura de Carpetas
 
 ```bash
-# Iniciar el stack completo con Docker Compose
-docker compose up --build
-
-# Ejecutar migraciones de base de datos
-npm run db:migrate
-
-# Iniciar servidor de desarrollo
-npm run dev
+src/
+├── config/
+│   └── database.ts
+├── models/
+│   ├── Barbershop.ts
+│   ├── Service.ts
+│   ├── Client.ts
+│   ├── Appointment.ts
+│   └── index.ts
+├── services/
+│   ├── database.service.ts
+│   ├── twilio.service.ts
+│   └── reminder.service.ts
+├── managers/
+│   └── conversation.manager.ts
+├── controllers/
+│   └── whatsapp.controller.ts
+├── types/
+│   └── conversation.ts
+├── utils/
+│   └── helpers.ts
+├── routes/
+│   └── whatsapp.route.ts
+└── index.ts
 ```
 
-El frontend es una SPA en React con TailwindCSS. El polling de datos utiliza React Query con una configuración agresiva de `stale-time` — la mayoría de las vistas se actualizan cada 30s, y el feed de CI cada 5s mediante fallback a WebSocket.
+Flujo de Datos
 
-## Desafíos
-
-La parte más difícil fue el rate-limiting. La API de GitHub es generosa, pero no ilimitada. Implementamos una caché de dos capas: una LRU en memoria para lecturas en menos de un segundo, y un almacenamiento de snapshots en PostgreSQL para datos con más de 5 minutos de antigüedad. Esto redujo las llamadas a la API en un ~87% sin que el usuario percibiera datos desactualizados.
-
-## Lo que aprendí
-
-Construir esto consolidó mi comprensión del diseño de sistemas en tiempo real. Específicamente: cuándo usar push vs polling, cómo gestionar fallos parciales en pipelines de agregación, y el costo no tan evidente de mantener conexiones WebSocket activas a escala.
+```bash
+Webhook Twilio WhatsApp
+        ↓
+API Express
+        ↓
+Controller WhatsApp
+        ↓
+Conversation Manager (FSM)
+        ├── Gestión de Sesiones
+        ├── Servicios DB
+        └── Servicio Twilio
+        ↓
+PostgreSQL
+        ↓
+Cron Job → Reminder Service → Twilio
+```

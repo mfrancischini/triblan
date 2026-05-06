@@ -1,5 +1,5 @@
 ---
-title: "E-Commerce Platform UI"
+title: "ShopFlow E-Commerce Platform"
 description: "Interfaz de comercio electrónico completa con carrito de compras, favoritos, autenticación y panel de administración, desarrollada con React, TypeScript y Redux Toolkit."
 image: "./cover.webp"
 technologies:

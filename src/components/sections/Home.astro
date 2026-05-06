@@ -1,56 +1,77 @@
 ---
-import { DownloadIcon, GithubIcon, LinkedinIcon } from "../../components/icons/contact"
-import { CtaButton, KeywordHighlight, Section } from "../ui"
-import DevArmandoCV from "/ArmandoCrescencio_CV.pdf"
+import {
+  DownloadIcon,
+  GithubIcon,
+  LinkedinIcon,
+} from "../../components/icons/contact";
+import { CtaButton, KeywordHighlight, Section } from "../ui";
+import DevArmandoCV from "/ArmandoCrescencio_CV.pdf";
 ---
 
 <Section id="home" className="mb-0">
   <article class="min-h-dvh grid place-content-center">
-    <section class="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden px-6">
+    <section
+      class="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden px-6"
+    >
       <div class="hero-glow"></div>
-      <article class="relative z-10 max-w-3xl mx-auto">
-        <h1 class="animate-fade-up delay-2 font-bold leading-[0.95] tracking-tighter mb-6 text-[clamp(3.2rem,10vw,7rem)]">
-          <span class="text-ink block animate-fade-up">Armando</span>
-          <span class="block text-outline">Crescencio</span>
-        </h1>
-        <section class="animate-fade-up delay-3 flex items-center justify-center gap-3 mb-7">
-          <span class="h-px w-12 bg-line2"></span>
-          <span class="font-mono text-sm tracking-widest text-muted uppercase">Full Stack Web Developer</span>
-          <span class="h-px w-12 bg-line2"></span>
-        </section>
-        <p class="animate-fade-up delay-4 text-[1.05rem] text-muted font-light leading-relaxed max-w-xl mx-auto mb-10">
-          Ingeniero Informático & desarrollador web con <KeywordHighlight> 3+ años</KeywordHighlight> de experiencia creando interfaces eficientes y escalables, especializado en <KeywordHighlight>React,</KeywordHighlight> <KeywordHighlight>Node.js,</KeywordHighlight> <KeywordHighlight>TypeScript</KeywordHighlight> y <KeywordHighlight>TailwindCSS.</KeywordHighlight>
-        </p>
-        <section class="animate-fade-up delay-5 flex flex-wrap items-center justify-center gap-3">
-          <CtaButton
-            variant="solid"
-            href="https://github.com/Chencho34"
-            target="_blank"
-            ariaLabel="Ver perfil de GitHub de Chencho34"
-          >
-            <GithubIcon class:list="w-4" aria-hidden="true"/>
-            <span class="md:inline hidden">Github</span>
-          </CtaButton>
-          <CtaButton
-            variant="ghost"
-            href="https://www.linkedin.com/in/armando-cr/"
-            target="_blank"
-            ariaLabel="Ver perfil de LinkedIn de Armando"
-          >
-            <LinkedinIcon class:list="w-4" aria-hidden="true"/>
-            <span class="md:inline hidden">LinkedIn</span>
-          </CtaButton>
-          <CtaButton 
-            variant="primary" 
-            href={DevArmandoCV}
-            download
-            ariaLabel="Descargar CV de Armando"
-          >
-            <DownloadIcon class:list="w-4" aria-hidden="true"/>
-            <span>Descargar CV</span>
-          </CtaButton>
-        </section>
-      </article>
+      <h1
+        class="animate-fade-up delay-2 font-bold leading-[0.95] tracking-tighter mb-6 text-[clamp(3.2rem,10vw,7rem)]"
+      >
+        <span class="text-ink block animate-fade-up">Armando</span>
+        <span class="block text-outline">Crescencio</span>
+      </h1>
+      <section
+        class="animate-fade-up delay-3 flex items-center justify-center gap-3 mb-7"
+      >
+        <span class="h-px w-12 bg-line2"></span>
+        <span class="font-mono text-sm tracking-widest text-muted uppercase"
+          >Full Stack Web Developer</span
+        >
+        <span class="h-px w-12 bg-line2"></span>
+      </section>
+      <p
+        class="animate-fade-up delay-4 text-[1.05rem] text-muted font-light leading-relaxed max-w-xl mx-auto mb-10"
+      >
+        Ingeniero Informático & desarrollador web con <KeywordHighlight>
+          2+ años</KeywordHighlight
+        > de experiencia creando interfaces eficientes y escalables, especializado
+        en <KeywordHighlight>React,</KeywordHighlight>
+        <KeywordHighlight>Node.js,</KeywordHighlight>
+        <KeywordHighlight>TypeScript</KeywordHighlight> y <KeywordHighlight
+          >TailwindCSS.</KeywordHighlight
+        >
+      </p>
+      <section
+        class="animate-fade-up delay-5 flex flex-wrap items-center justify-center gap-3"
+      >
+        <CtaButton
+          variant="solid"
+          href="https://github.com/Chencho34"
+          target="_blank"
+          ariaLabel="Ver perfil de GitHub de Chencho34"
+        >
+          <GithubIcon class:list="w-4" aria-hidden="true" />
+          <span class="md:inline hidden">Github</span>
+        </CtaButton>
+        <CtaButton
+          variant="ghost"
+          href="https://www.linkedin.com/in/armando-cr/"
+          target="_blank"
+          ariaLabel="Ver perfil de LinkedIn de Armando"
+        >
+          <LinkedinIcon class:list="w-4" aria-hidden="true" />
+          <span class="md:inline hidden">LinkedIn</span>
+        </CtaButton>
+        <CtaButton
+          variant="primary"
+          href={DevArmandoCV}
+          download
+          ariaLabel="Descargar CV de Armando"
+        >
+          <DownloadIcon class:list="w-4" aria-hidden="true" />
+          <span>Descargar CV</span>
+        </CtaButton>
+      </section>
     </section>
   </article>
 </Section>

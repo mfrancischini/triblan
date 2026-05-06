@@ -8,4 +8,5 @@ export interface Experience {
   technologies: string[]
   exp?: string[]
   link?: string
+  currentJob: boolean
 }

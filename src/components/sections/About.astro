@@ -1,37 +1,48 @@
 ---
-import { TitleSection, SubtitleSection, Section, SkillsColumn, KeywordHighlight } from "../../components/ui"
-import { skills } from "../../constants/skills"
+import {
+  TitleSection,
+  SubtitleSection,
+  Section,
+  SkillsColumn,
+  KeywordHighlight,
+} from "../../components/ui";
+import { skills } from "../../constants/skills";
 ---
 
 <Section id="about" className="mb-12 md:mb-20">
   <TitleSection title="Sobre mí" />
-  <article class="flex sm:flex-row flex-col gap-12 items-center justify-center mb-12">
+  <article
+    class="flex sm:flex-row flex-col gap-12 items-center justify-center mb-12"
+  >
     <section class="space-y-4 flex-1">
       <h3 class="text-xl font-semibold tracking-tight">
         Hola, soy Armando
         <span class="ml-1">👋</span>
       </h3>
       <p class="font-light text-muted leading-relaxed">
-        Pero mis amigos me llaman <KeywordHighlight>Chencho</KeywordHighlight>. Empecé en la programación desde
-        bachillerato y desde entonces he estado aprendiendo y creciendo como
+        Pero mis amigos me llaman <KeywordHighlight>Chencho</KeywordHighlight>.
+        Empecé en la programación desde bachillerato y desde entonces he estado
+        aprendiendo y creciendo como
         <KeywordHighlight>desarrollador web</KeywordHighlight>.
       </p>
       <p class="font-light text-muted leading-relaxed">
-        Soy <KeywordHighlight>Ingeniero Informático</KeywordHighlight> con 3+ años de experiencia construyendo aplicaciones web
-        escalables. Me apasiona escribir código limpio, optimizar rendimiento y
-        estar siempre explorando nuevas tecnologías.
+        Soy <KeywordHighlight>Ingeniero Informático</KeywordHighlight> con 2+ años
+        de experiencia construyendo aplicaciones web escalables. Me apasiona escribir
+        código limpio, optimizar rendimiento y estar siempre explorando nuevas tecnologías.
       </p>
       <p class="font-light text-muted leading-relaxed">
-        Actualmente me especializo en desarrollo <KeywordHighlight>full-stack</KeywordHighlight> con <KeywordHighlight>React</KeywordHighlight> y
-        <KeywordHighlight>Node.js/Express</KeywordHighlight>, mientras exploro <KeywordHighlight>Astro</KeywordHighlight> para crear experiencias web
-        ultra-rápidas.
+        Actualmente me especializo en desarrollo <KeywordHighlight
+          >full-stack</KeywordHighlight
+        > con <KeywordHighlight>React</KeywordHighlight> y
+        <KeywordHighlight>Node.js/Express</KeywordHighlight>, mientras exploro <KeywordHighlight
+          >Astro</KeywordHighlight
+        > para crear experiencias web ultra-rápidas.
       </p>
     </section>
     <figure class="flex justify-center avatar-wrap rounded-2xl">
       <img
         src="/avatar.webp"
         loading="lazy"
-        decoding="async"
         alt="Jose Armando Crescencio"
         class="relative z-10 size-72 sm:size-64 rounded-2xl object-cover border border-line2"
         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
@@ -39,7 +50,7 @@ import { skills } from "../../constants/skills"
     </figure>
   </article>
   <article>
-    <SubtitleSection title="Tecnologias & Herramientas"/>
+    <SubtitleSection title="Tecnologias & Herramientas" />
     <section class="flex sm:flex-row flex-col gap-8">
       <SkillsColumn
         skills={skills.frontend}
@@ -56,6 +67,6 @@ import { skills } from "../../constants/skills"
         titleSection="Tools"
         className="bg-gray-600/10 text-gray-300 border border-gray-300/30"
       />
-    </>
+    </section>
   </article>
 </Section>
