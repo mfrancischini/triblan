@@ -33,6 +33,6 @@ export const experience: Experience[] = [
       'Colaboré en code reviews contribuyendo a la reducción de errores en producción en un 35%.',
       'Colaboré desde la definición de requerimientos funcionales hasta el despliegue en producción, adquiriendo experiencia en el ciclo de vida completo del desarrollo de software bajo metodologías SCRUM (sprints, daily, retrospectivas).',
     ],
-    technologies: ['Next.js', 'TailwindCSS', 'Framer Motion', 'Java', 'Spring Boot', 'MySQL', 'Git', 'SCRUM'],
+    technologies: ['Next.js', 'TypeScript', 'TailwindCSS', 'Framer Motion', 'Java', 'Spring Boot', 'MySQL', 'Git', 'SCRUM', 'Azure'],
   }
 ]
