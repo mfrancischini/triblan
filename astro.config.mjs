@@ -5,14 +5,13 @@ import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from '@astrojs/sitemap';
 
-import vercelAdapter from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://triblan.com',
+site: 'https://mfrancischini.github.io',
+base: '/triblan',
   compressHTML: true,
   output: 'static',
-  adapter: vercelAdapter(),
   vite: {
     plugins: [tailwindcss()],
     build: {

@@ -111,5 +111,3 @@ Optimizaciones aplicadas:
 - `quality={75}` en imágenes de cards
  
 ## Contacto
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/armando-cr/) [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:armandocrescencio343@gmail.com) [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://chencho-dev.vercel.app)
