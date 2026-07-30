@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -18,7 +19,7 @@
   --color-faint: #92866f;
   /* ── Tipografía ── */
   --font-sans: 'IBM Plex Sans Variable', sans-serif;
-  --font-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-serif: 'Alice', Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-mono: 'IBM Plex Sans Variable', monospace;
   /* ── Espaciado base ── */
   --max-width: 900px;
