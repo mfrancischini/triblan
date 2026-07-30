@@ -2,11 +2,10 @@
 
 [![Astro](https://img.shields.io/badge/Astro-0C0F19?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/) [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/) [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-# Portfolio Personal - Chencho-dev
+# Triblan
 
-Portafolio personal desarrollado con **Astro 5**, **TailwindCSS v4** y **TypeScript**. Diseño minimalista dark con acentos lima, optimizado para SEO, accesibilidad y rendimiento.
+Sitio web corporativo para **Triblan Estudio Jurídico**. Diseño elegante y sobrio con acentos dorados, optimizado para SEO, accesibilidad y rendimiento.
 
-[chencho-dev.vercel.app](https://chencho-dev.vercel.app)
 
 ## Características
  

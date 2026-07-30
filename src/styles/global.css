@@ -3,42 +3,52 @@
 
 @theme {
   /* ── Colores base ── */
-  --color-base:     #0a0a0a;
-  --color-surface:  #111111;
-  --color-surface2: #1a1a1a;
-  --color-line:     #1f1f1f;
-  --color-line2:    #2a2a2a;
-
+  --color-base: #110d24;
+  --color-surface: #1e163f;
+  --color-surface2: #241b52;
+  --color-line: #3d2e6d;
+  --color-line2: #4a3b81;
   /* ── Acento ── */
-  --color-lime:        #aadd55;
-  --color-lime-dim:    rgba(170, 221, 85, 0.10);
-  --color-lime-border: rgba(170, 221, 85, 0.28);
-
+  --color-lime: #c9a563;
+  --color-lime-dim: rgba(201, 165, 99, 0.12);
+  --color-lime-border: rgba(201, 165, 99, 0.28);
   /* ── Texto ── */
-  --color-ink:   #f0f0f0;
-  --color-muted: #888888;
-  --color-faint: #666666;
-
+  --color-ink: #f6eedf;
+  --color-muted: #c4b69a;
+  --color-faint: #92866f;
   /* ── Tipografía ── */
-  --font-sans: 'Outfit Variable', sans-serif;
+  --font-sans: 'IBM Plex Sans Variable', sans-serif;
+  --font-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-mono: 'IBM Plex Sans Variable', monospace;
-
   /* ── Espaciado base ── */
   --max-width: 900px;
   --nav-height: 56px;
-
-  --animate-fade-up:   fadeUp 0.6s ease both;
+  --animate-fade-up: fadeUp 0.6s ease both;
   --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
 
-   /* Keyframes */
+  /* Keyframes */
   @keyframes fadeUp {
-    0%   { opacity: 0; transform: translateY(18px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0.2; }
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.2;
+    }
   }
 }
 
@@ -51,53 +61,134 @@
   }
 
   body {
-    @apply bg-base text-ink font-sans;
+    @apply bg-base text-ink;
+    font-family: var(--font-serif);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    letter-spacing: 0.02em;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif) !important;
+  }
+
+  .text-gold {
+    color: var(--color-lime);
+  }
+
+  p,
+  a,
+  span,
+  li,
+  blockquote {
+    font-family: var(--font-serif);
   }
 
   /* scrollbar minimalista */
-  ::-webkit-scrollbar       { width: 6px; }
-  ::-webkit-scrollbar-track { background: #0a0a0a; }
-  ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: #444444; }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #444444;
+  }
 
   /* Fuerza font-display swap */
-  @font-face { font-family: 'Outfit Variable';       font-display: swap; }
-  @font-face { font-family: 'IBM Plex Sans Variable'; font-display: swap; }
+  @font-face {
+    font-family: 'Outfit Variable';
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Sans Variable';
+    font-display: swap;
+  }
 }
 
 /* ─── Utilidades que Tailwind no puede expresar de forma nativa ─── */
 @layer utilities {
 
-  /* lime con alpha — necesario porque Tailwind no genera bg-lime/10 sin safelist */
-  .bg-lime-dim    { background-color: rgba(170, 221, 85, 0.10); }
-  .border-lime-soft { border-color:   rgba(170, 221, 85, 0.28); }
+  /* gold con alpha — necesario porque Tailwind no genera bg-lime/10 sin safelist */
+  .bg-lime-dim {
+    background-color: rgba(201, 165, 99, 0.12);
+  }
+
+  .border-lime-soft {
+    border-color: rgba(201, 165, 99, 0.28);
+  }
+
+  .text-gold {
+    color: var(--color-lime);
+  }
+
+  .border-gold {
+    border-color: var(--color-lime);
+  }
+
+  .bg-gold-dim {
+    background-color: rgba(201, 165, 99, 0.09);
+  }
 
   /* stagger delays para animaciones de entrada */
-  .delay-1 { animation-delay: 0.05s; }
-  .delay-2 { animation-delay: 0.15s; }
-  .delay-3 { animation-delay: 0.25s; }
-  .delay-4 { animation-delay: 0.35s; }
-  .delay-5 { animation-delay: 0.50s; }
-  .delay-6 { animation-delay: 0.65s; }
+  .delay-1 {
+    animation-delay: 0.05s;
+  }
 
-  /* outline text — apellido en el hero */
+  .delay-2 {
+    animation-delay: 0.15s;
+  }
+
+  .delay-3 {
+    animation-delay: 0.25s;
+  }
+
+  .delay-4 {
+    animation-delay: 0.35s;
+  }
+
+  .delay-5 {
+    animation-delay: 0.50s;
+  }
+
+  .delay-6 {
+    animation-delay: 0.65s;
+  }
+
+  /* outline text — estilo hero elegante */
   .text-outline {
     color: transparent;
     font: bold;
-    -webkit-text-stroke: 1px #aadd55;
+    -webkit-text-stroke: 1px rgba(201, 165, 99, 0.95);
   }
 
-  /* glow radial verde detrás del hero */
+  /* glow radial dorado/púrpura detrás del hero */
   .hero-glow {
     position: absolute;
-    top: 0; left: 50%;
+    top: 0;
+    left: 50%;
     transform: translateX(-50%);
-    width: 700px; height: 500px;
-    background: radial-gradient(
-      circle at center,
-      rgba(170, 221, 85, 0.07) 0%,
-      transparent 70%
-    );
+    width: 720px;
+    height: 520px;
+    background: radial-gradient(circle at center,
+        rgba(201, 165, 99, 0.14) 0%,
+        rgba(140, 116, 200, 0.10) 30%,
+        transparent 72%);
     pointer-events: none;
   }
 }
@@ -111,10 +202,10 @@
   position: absolute;
   inset: -2px;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(170,221,85,0.3), transparent 60%);
+  background: linear-gradient(135deg, rgba(201, 165, 99, 0.35), transparent 60%);
   z-index: 0;
 }
-  
+
 /* ─── Grain — efecto de textura sobre el fondo ─── */
 body::after {
   content: '';

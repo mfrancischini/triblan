@@ -9,7 +9,7 @@ import vercelAdapter from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://chencho-dev.vercel.app',
+  site: 'https://triblan.com',
   compressHTML: true,
   output: 'static',
   adapter: vercelAdapter(),

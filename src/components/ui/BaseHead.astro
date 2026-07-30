@@ -11,7 +11,7 @@ interface Props {
 
 const { 
   title,
-  description = 'Ingeniero Informático y Full Stack Developer. Especializado en React, Node.js y TypeScript. Ve mis proyectos y contáctame.', 
+  description = 'Triblan es un estudio jurídico en Olivos especializado en derecho laboral, accidentes de tránsito y defensa del consumidor.', 
   image 
 } = Astro.props
 
@@ -29,12 +29,12 @@ const ogImage = image
 <!-- Global Metadata -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon" type="image/png" sizes="32x32"   href="/favicon-32.png" />
-<link rel="icon" type="image/png" sizes="48x48"   href="/favicon-48.png" />
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
-<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
-<link rel="apple-touch-icon"      sizes="192x192" href="/favicon-192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/logo.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/logo.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/logo.png" />
+<link rel="apple-touch-icon" sizes="192x192" href="/logo.png" />
+<link rel="shortcut icon" href="/logo.png" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <meta name="generator" content={Astro.generator} />
 
@@ -45,8 +45,8 @@ const ogImage = image
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
-<meta name="author" content="Armando Crescencio" />
-<meta name="keywords" content="armando crescencio, chencho34, full stack developer mexico, react developer, node.js developer, typescript developer, nextjs developer, astro framework, tailwindcss, desarrollador web fullstack, ingeniero informatico, veracruz mexico, desarrollador remoto, freelance developer mexico, api restful, postgresql developer" />
+<meta name="author" content="Triblan Estudio Jurídico" />
+<meta name="keywords" content="triblan, estudio juridico, abogados laborales, defensa del consumidor, accidentes de transito, bufete, olivos, zona norte, derecho laboral, consulta legal, asesoría jurídica" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -54,7 +54,7 @@ const ogImage = image
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
-<meta property="og:site_name" content="Armando Crescencio Portfolio" />
+<meta property="og:site_name" content="Triblan Estudio Jurídico" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -68,31 +68,32 @@ const ogImage = image
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://chencho-dev.vercel.app/#person",
-  "name": "Armando Crescencio",
-  "alternateName": "Chencho34",
-  "url": "https://chencho-dev.vercel.app/",
-  "image": "https://chencho-dev.vercel.app/avatar.webp",
-  "jobTitle": "Full Stack Developer",
-  "description": "Ingeniero Informático y Full Stack Developer. Especializado en React, Node.js y TypeScript. Basado en México, disponible remotamente. Ve mis proyectos y contáctame.",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "armandocrescencio343@gmail.com",
-    "contactType": "personal"
-  },
+  "@type": "LegalService",
+  "@id": "https://triblan.com/#legalservice",
+  "name": "Triblan Estudio Jurídico",
+  "url": "https://triblan.com/",
+  "logo": "https://triblan.com/favicon.svg",
+  "description": "Estudio jurídico en Olivos especializado en derecho laboral, accidentes de tránsito y defensa del consumidor.",
+  "telephone": "+54 11 6915 4261",
+  "email": "estudiotriblan@gmail.com",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Veracruz",
-    "addressRegion": "Veracruz",
-    "addressCountry": "MX"
+    "streetAddress": "Av. Del Trabajo 123",
+    "addressLocality": "Olivos",
+    "addressRegion": "Buenos Aires",
+    "postalCode": "1636",
+    "addressCountry": "AR"
   },
-  "sameAs": [
-    "https://github.com/Chencho34",
-    "https://www.linkedin.com/in/armando-cr/"
+  "areaServed": "Zona Norte",
+  "serviceType": [
+    "Derecho Laboral",
+    "Accidentes de Trabajo (ART)",
+    "Accidentes de Tránsito",
+    "Defensa del Consumidor",
+    "Derecho Penal"
   ],
-  "knowsAbout": [
-    "React", "Node.js", "TypeScript", "Next.js",
-    "Astro", "TailwindCSS", "PostgreSQL", "Docker"
+  "sameAs": [
+    "https://www.facebook.com/triblan",
+    "https://www.instagram.com/triblan"
   ]
 })} />

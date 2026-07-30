@@ -1,72 +1,40 @@
 ---
-import {
-  TitleSection,
-  SubtitleSection,
-  Section,
-  SkillsColumn,
-  KeywordHighlight,
-} from "../../components/ui";
-import { skills } from "../../constants/skills";
+import { TitleSection, Section, KeywordHighlight } from "../../components/ui";
 ---
 
 <Section id="about" className="mb-12 md:mb-20">
-  <TitleSection title="Sobre mí" />
+  <TitleSection title="Sobre Nosotros" />
   <article
     class="flex sm:flex-row flex-col gap-12 items-center justify-center mb-12"
   >
-    <section class="space-y-4 flex-1">
-      <h3 class="text-xl font-semibold tracking-tight">
-        Hola, soy Armando
-        <span class="ml-1">👋</span>
+    <section class="space-y-4 flex-1 font-serif">
+      <h3 class="text-xl font-serif font-semibold tracking-tight">
+        Somos dos abogadas al frente de Triblan
       </h3>
       <p class="font-light text-muted leading-relaxed">
-        Pero mis amigos me llaman <KeywordHighlight>Chencho</KeywordHighlight>.
-        Empecé en la programación desde bachillerato y desde entonces he estado
-        aprendiendo y creciendo como
-        <KeywordHighlight>desarrollador web</KeywordHighlight>.
+        Un estudio jurídico enfocado en <KeywordHighlight>derechos laborales</KeywordHighlight>,
+        <KeywordHighlight>defensa del consumidor</KeywordHighlight> y
+        <KeywordHighlight>accidentes de tránsito</KeywordHighlight>.
       </p>
       <p class="font-light text-muted leading-relaxed">
-        Soy <KeywordHighlight>Ingeniero Informático</KeywordHighlight> con 2+ años
-        de experiencia construyendo aplicaciones web escalables. Me apasiona escribir
-        código limpio, optimizar rendimiento y estar siempre explorando nuevas tecnologías.
+        Como dos abogadas, combinamos <KeywordHighlight>experiencia</KeywordHighlight> y
+        <KeywordHighlight>compromiso</KeywordHighlight> para proteger tus derechos
+        y entregar resultados con transparencia.
       </p>
       <p class="font-light text-muted leading-relaxed">
-        Actualmente me especializo en desarrollo <KeywordHighlight
-          >full-stack</KeywordHighlight
-        > con <KeywordHighlight>React</KeywordHighlight> y
-        <KeywordHighlight>Node.js/Express</KeywordHighlight>, mientras exploro <KeywordHighlight
-          >Astro</KeywordHighlight
-        > para crear experiencias web ultra-rápidas.
+        Brindamos asesorías personalizadas para empresas y particulares,
+        acompañando cada etapa del proceso con un enfoque serio, profesional
+        y cercano.
       </p>
     </section>
-    <figure class="flex justify-center avatar-wrap rounded-2xl">
+    <figure class="flex justify-center avatar-wrap rounded-3xl overflow-hidden border border-line2 shadow-lg shadow-black/20">
       <img
-        src="/avatar.webp"
+        src="/nosotras.jpeg"
         loading="lazy"
-        alt="Jose Armando Crescencio"
-        class="relative z-10 size-72 sm:size-64 rounded-2xl object-cover border border-line2"
+        alt="Las dos abogadas de Triblan Estudio Jurídico"
+        class="relative z-10 w-50 h-50 rounded-3xl object-cover border border-line2"
         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
       />
     </figure>
-  </article>
-  <article>
-    <SubtitleSection title="Tecnologias & Herramientas" />
-    <section class="flex sm:flex-row flex-col gap-8">
-      <SkillsColumn
-        skills={skills.frontend}
-        titleSection="Frontend"
-        className="bg-info/10 text-info border border-info/30"
-      />
-      <SkillsColumn
-        skills={skills.backend}
-        titleSection="Backend"
-        className="bg-success/10 text-success border border-success/30"
-      />
-      <SkillsColumn
-        skills={skills.tools}
-        titleSection="Tools"
-        className="bg-gray-600/10 text-gray-300 border border-gray-300/30"
-      />
-    </section>
   </article>
 </Section>

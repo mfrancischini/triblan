@@ -1,51 +1,86 @@
 ---
-import { getCollection } from "astro:content";
-import { Section, TitleSection, CardProject, SubtitleSection, FeaturedProject} from "../../components/ui";
-
-const allProjects = await getCollection('projects')
-const cleanProjects = allProjects.filter(p => !p.data.draft)
-
-const sorted = cleanProjects.sort((a, b) => {
-  const aDate = a.data.date?.getTime() ?? 0;
-  const bDate = b.data.date?.getTime() ?? 0;
-  return bDate - aDate;
-});
-
-const featuredProjects = sorted.filter(p => p.data.featured);
-const otherProjects = sorted.filter(p => !p.data.featured);
+import { Section, TitleSection } from "../../components/ui";
 ---
 
 <Section id="projects">
-  <TitleSection id="projects-heading" title="Proyectos" className="mb-8"/>
-  <p class="text-sm text-muted max-w-lg mx-auto mb-12 text-center">
-    Una colección de proyectos que muestran mis habilidades en el desarrollo full-stack, desde el concepto hasta la implementación.
+  <TitleSection id="projects-heading" title="Servicios" className="mb-8"/>
+  <p class="text-sm text-muted max-w-2xl mx-auto mb-12 text-center font-serif">
+    En Triblan ofrecemos asesoramiento jurídico integral con un enfoque profesional, cercano y personalizado. Nuestro compromiso es brindar soluciones rápidas, eficientes y estratégicas, acompañando a cada cliente durante todo el proceso. Nos especializamos en Derecho Laboral, Accidentes de Trabajo (ART), Accidentes de Tránsito, Defensa del Consumidor y Derecho Penal, trabajando para proteger sus derechos y obtener los mejores resultados.
   </p>
-  
-  {featuredProjects.length > 0 && (
-    <div class="space-y-4 mb-8">
-      {featuredProjects.map((project, featuredIndex) => (
-        <FeaturedProject
-          project={project}
-          featuredIndex={featuredIndex}
-        />
-      ))}
-    </div>
-  )}
 
-  {otherProjects.length > 0 && (
-    <SubtitleSection title="Otros Proyectos" />
-    <ul class="space-y-4 list-none" role="list" aria-label="Other projects">
-      {otherProjects.map(project => (
-        <li>
-          <CardProject project={project} />
-        </li>
-      ))}
-    </ul>
-  )}
+  <div class="grid gap-6 sm:grid-cols-2">
+    <article class="rounded-[2rem] border border-line2 bg-surface2/80 p-8 shadow-lg shadow-black/10">
+      <h3 class="font-serif text-xl font-semibold mb-3">Derecho Laboral</h3>
+      <p class="text-muted leading-relaxed mb-4">
+        Brindamos asesoramiento y representación integral a trabajadores en conflictos laborales, defendiendo sus derechos desde el inicio del reclamo hasta su resolución judicial.
+      </p>
+      <ul class="list-disc list-inside text-sm text-muted space-y-2">
+        <li>Despidos con y sin causa.</li>
+        <li>Trabajo no registrado o parcialmente registrado.</li>
+        <li>Diferencias salariales y reclamos por comisiones.</li>
+        <li>Intimaciones laborales y telegramas.</li>
+        <li>Indemnizaciones y liquidaciones finales.</li>
+        <li>Asesoramiento en negociaciones y acuerdos laborales.</li>
+      </ul>
+    </article>
 
-  {allProjects.length === 0 && (
-    <div class="flex items-center justify-center py-20">
-      <p class="font-mono text-sm text-white/20">No projects yet.</p>
-    </div>
-  )}
+    <article class="rounded-[2rem] border border-line2 bg-surface2/80 p-8 shadow-lg shadow-black/10">
+      <h3 class="font-serif text-xl font-semibold mb-3">Accidentes de Trabajo (ART)</h3>
+      <p class="text-muted leading-relaxed mb-4">
+        Defendemos los derechos de trabajadores que hayan sufrido un accidente laboral o una enfermedad derivada de su actividad, gestionando el reclamo ante la ART y, de ser necesario, iniciando acciones judiciales para obtener una indemnización justa.
+      </p>
+      <ul class="list-disc list-inside text-sm text-muted space-y-2">
+        <li>Accidentes de trabajo.</li>
+        <li>Enfermedades profesionales.</li>
+        <li>Accidentes in itinere (durante el trayecto hacia o desde el trabajo).</li>
+        <li>Reclamos por incapacidad laboral.</li>
+        <li>Comisiones Médicas y apelaciones.</li>
+        <li>Demandas contra ART y empleadores.</li>
+      </ul>
+    </article>
+
+    <article class="rounded-[2rem] border border-line2 bg-surface2/80 p-8 shadow-lg shadow-black/10">
+      <h3 class="font-serif text-xl font-semibold mb-3">Accidentes de Tránsito</h3>
+      <p class="text-muted leading-relaxed mb-4">
+        Representamos a víctimas de accidentes de tránsito, gestionando el reclamo frente a compañías aseguradoras y reclamando la reparación integral de los daños sufridos.
+      </p>
+      <ul class="list-disc list-inside text-sm text-muted space-y-2">
+        <li>Lesiones personales y daños materiales.</li>
+        <li>Reclamos contra compañías de seguros.</li>
+        <li>Negociaciones extrajudiciales.</li>
+        <li>Mediaciones y acciones judiciales.</li>
+        <li>Indemnizaciones por incapacidad y daño moral.</li>
+      </ul>
+    </article>
+
+    <article class="rounded-[2rem] border border-line2 bg-surface2/80 p-8 shadow-lg shadow-black/10">
+      <h3 class="font-serif text-xl font-semibold mb-3">Defensa del Consumidor</h3>
+      <p class="text-muted leading-relaxed mb-4">
+        Asistimos a consumidores frente a incumplimientos de empresas, comercios y entidades financieras, procurando una solución rápida y efectiva.
+      </p>
+      <ul class="list-disc list-inside text-sm text-muted space-y-2">
+        <li>Productos defectuosos y servicios deficientes.</li>
+        <li>Planes de ahorro.</li>
+        <li>Incumplimientos contractuales.</li>
+        <li>Reclamos contra bancos, financieras y empresas.</li>
+        <li>Defensa frente a cláusulas abusivas.</li>
+        <li>Acciones judiciales y extrajudiciales.</li>
+      </ul>
+    </article>
+
+    <article class="rounded-[2rem] border border-line2 bg-surface2/80 p-8 shadow-lg shadow-black/10">
+      <h3 class="font-serif text-xl font-semibold mb-3">Derecho Penal</h3>
+      <p class="text-muted leading-relaxed mb-4">
+        Brindamos defensa y asesoramiento jurídico en procesos penales, garantizando una representación seria, estratégica y comprometida en todas las etapas del procedimiento.
+      </p>
+      <ul class="list-disc list-inside text-sm text-muted space-y-2">
+        <li>Defensa en causas penales.</li>
+        <li>Asistencia al imputado y a la víctima.</li>
+        <li>Excarcelaciones y medidas de coerción.</li>
+        <li>Denuncias y querellas.</li>
+        <li>Violencia de género y delitos contra la integridad física.</li>
+        <li>Acompañamiento durante todo el proceso penal.</li>
+      </ul>
+    </article>
+  </div>
 </Section>

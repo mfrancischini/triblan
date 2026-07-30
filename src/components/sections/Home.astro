@@ -1,11 +1,5 @@
 ---
-import {
-  DownloadIcon,
-  GithubIcon,
-  LinkedinIcon,
-} from "../../components/icons/contact";
 import { CtaButton, KeywordHighlight, Section } from "../ui";
-import DevArmandoCV from "/ArmandoCrescencio_CV.pdf";
 ---
 
 <Section id="home" className="mb-0">
@@ -14,62 +8,51 @@ import DevArmandoCV from "/ArmandoCrescencio_CV.pdf";
       class="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden px-6"
     >
       <div class="hero-glow"></div>
+      <img
+        src="/background.jpeg"
+        alt="Imagen Triblan"
+        class="relative z-10 animate-fade-up delay-2 mt-[60px] mb-6 h-[220px] w-auto rounded-3xl border border-line2 bg-surface px-4 py-3 shadow-xl shadow-black/10 object-cover"
+      />
       <h1
-        class="animate-fade-up delay-2 font-bold leading-[0.95] tracking-tighter mb-6 text-[clamp(3.2rem,10vw,7rem)]"
+        class="animate-fade-up delay-3 font-serif font-bold leading-[0.95] tracking-tighter mb-6 text-[clamp(3.2rem,10vw,7rem)]"
       >
-        <span class="text-ink block animate-fade-up">Armando</span>
-        <span class="block text-outline">Crescencio</span>
+        
+        <span class="block text-outline">Estudio Jurídico</span>
       </h1>
       <section
         class="animate-fade-up delay-3 flex items-center justify-center gap-3 mb-7"
       >
         <span class="h-px w-12 bg-line2"></span>
-        <span class="font-mono text-sm tracking-widest text-muted uppercase"
-          >Full Stack Web Developer</span
+        <span class="text-sm tracking-[0.22em] text-muted uppercase"
+          >Derecho Laboral • Defensa del Consumidor • Accidentes de Tránsito</span
         >
         <span class="h-px w-12 bg-line2"></span>
       </section>
-      <p
-        class="animate-fade-up delay-4 text-[1.05rem] text-muted font-light leading-relaxed max-w-xl mx-auto mb-10"
-      >
-        Ingeniero Informático & desarrollador web con <KeywordHighlight>
-          2+ años</KeywordHighlight
-        > de experiencia creando interfaces eficientes y escalables, especializado
-        en <KeywordHighlight>React,</KeywordHighlight>
-        <KeywordHighlight>Node.js,</KeywordHighlight>
-        <KeywordHighlight>TypeScript</KeywordHighlight> y <KeywordHighlight
-          >TailwindCSS.</KeywordHighlight
-        >
-      </p>
+    <p
+  class="animate-fade-up delay-4 text-[1.05rem] text-muted font-light font-serif leading-relaxed max-w-xl mx-auto mb-10"
+>
+  Abogados especializados en brindar asesoría legal personalizada para personas y empresas.
+  <KeywordHighlight>Más de 15 años</KeywordHighlight>
+  de experiencia en derecho laboral, defensa del consumidor y accidentes de tránsito.
+  Nuestra firma combina <KeywordHighlight>confianza</KeywordHighlight>, <KeywordHighlight>resultados</KeywordHighlight>
+  y <KeywordHighlight>compromiso</KeywordHighlight> en cada caso.
+</p>
       <section
         class="animate-fade-up delay-5 flex flex-wrap items-center justify-center gap-3"
       >
         <CtaButton
           variant="solid"
-          href="https://github.com/Chencho34"
-          target="_blank"
-          ariaLabel="Ver perfil de GitHub de Chencho34"
+          href="mailto:estudiotriblan@gmail.com"
+          ariaLabel="Solicitar consulta legal"
         >
-          <GithubIcon class:list="w-4" aria-hidden="true" />
-          <span class="md:inline hidden">Github</span>
+          Solicitar consulta
         </CtaButton>
         <CtaButton
           variant="ghost"
-          href="https://www.linkedin.com/in/armando-cr/"
-          target="_blank"
-          ariaLabel="Ver perfil de LinkedIn de Armando"
+          href="/#contact"
+          ariaLabel="Ver información de contacto"
         >
-          <LinkedinIcon class:list="w-4" aria-hidden="true" />
-          <span class="md:inline hidden">LinkedIn</span>
-        </CtaButton>
-        <CtaButton
-          variant="primary"
-          href={DevArmandoCV}
-          download
-          ariaLabel="Descargar CV de Armando"
-        >
-          <DownloadIcon class:list="w-4" aria-hidden="true" />
-          <span>Descargar CV</span>
+          Contáctanos
         </CtaButton>
       </section>
     </section>

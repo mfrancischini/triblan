@@ -1,52 +1,34 @@
 ---
-import { ArrowRightIcon, DownloadIcon, ExternalLinkIcon } from "../icons/contact";
-import { Section, CtaButton, PulseDot } from "../ui";
+import { Section } from "../ui";
 ---
 
 <Section id="contact">
   <article class="text-center mb-12">
-    <p class="font-mono text-xs tracking-widest text-muted uppercase mb-5">
-      Basado en Veracruz, Mexico — Disponible remotamente
+    <p class="font-serif text-xs tracking-[0.3em] text-muted uppercase mb-5">
+      Olivos | Zona Norte | Consultas legales
     </p>
-    <h2 class="font-bold leading-none tracking-tighter select-none" style="font-size:clamp(3.5rem,12vw,8rem)">
-      <span class="text-ink">Chencho</span>
-      <span style="color:transparent;-webkit-text-stroke:1px #aadd55">34</span>
+    <h2 class="font-serif font-bold leading-none tracking-tighter select-none" style="font-size:clamp(3.5rem,12vw,8rem)">
+      <span class="text-ink">TRIBLAN</span>
+      <span style="color:transparent;-webkit-text-stroke:1px rgba(201, 165, 99, 0.95)">Estudio Jurídico</span>
     </h2>
-    <a
-      href="mailto:armandocrescencio343@gmail.com"
-      class="group inline-flex items-center gap-2 mt-5 text-muted hover:text-lime transition-colors"
-    >
-      <span class="font-mono text-sm tracking-wide">armandocrescencio343@gmail.com</span>
-      <ExternalLinkIcon class:list="stroke-2 size-4 opacity-0 group-hover:opacity-100 -translate-y-0.5 group-hover:translate-y-0 transition-all"/>
-    </a>
+    <p class="mt-5 text-muted max-w-xl mx-auto leading-relaxed text-sm">
+      Asesoramiento jurídico especializado en derecho laboral, accidentes de tránsito y defensa del consumidor con un enfoque cercano y eficaz.
+    </p>
   </article>
-  <article class="border border-line bg-surface rounded-xl p-5 mb-12 flex flex-col sm:flex-row items-center justify-between gap-5">
-    <section class="flex items-center gap-3">
-      <PulseDot />
-      <div>
-        <p class="text-sm font-medium text-ink">Disponible para proyectos</p>
-        <p class="text-xs text-muted font-light">
-          Freelance &bull; Tiempo completo &bull; Remoto
-        </p>
-      </div>
-    </section>
-    <div class="hidden sm:block w-px h-10 bg-line2"></div>
-    <section class="flex gap-2.5 flex-wrap justify-center">
-      <CtaButton
-        variant="primary"
-        href="mailto:armandocrescencio343@gmail.com"
-      >
-        Hablemos
-        <ArrowRightIcon class:list="size-3.5" />
-      </CtaButton>
-      <CtaButton
-        variant="ghost"
-        download
-        href="/ArmandoCrescencio_CV.pdf"
-      >
-        Descargar CV
-        <DownloadIcon class:list="size-3.5"/>
-      </CtaButton>
-    </section>
+
+  <article class="grid gap-6 sm:grid-cols-3 max-w-4xl mx-auto">
+    <div class="rounded-[2rem] border border-line2 bg-surface2/80 p-8">
+      <p class="text-[10px] uppercase tracking-[0.3em] text-muted mb-3">Email</p>
+      <a href="mailto:estudiotriblan@gmail.com" class="text-sm font-medium text-ink hover:text-ink/80 transition">estudiotriblan@gmail.com</a>
+    </div>
+    <div class="rounded-[2rem] border border-line2 bg-surface2/80 p-8">
+      <p class="text-[10px] uppercase tracking-[0.3em] text-muted mb-3">WhatsApp</p>
+      <a href="https://wa.me/541169154261" target="_blank" rel="noopener noreferrer" class="block text-sm font-medium text-ink hover:text-ink/80 transition mb-2">+54 11 6915 4261</a>
+      <a href="https://wa.me/541137855936" target="_blank" rel="noopener noreferrer" class="block text-sm font-medium text-ink hover:text-ink/80 transition">+54 11 3785 5936</a>
+    </div>
+    <div class="rounded-[2rem] border border-line2 bg-surface2/80 p-8">
+      <p class="text-[10px] uppercase tracking-[0.3em] text-muted mb-3">Atención</p>
+      <p class="text-sm text-muted leading-relaxed">Estamos disponibles para evaluar tu caso y ofrecer una estrategia legal clara y comprometida.</p>
+    </div>
   </article>
 </Section>

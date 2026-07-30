@@ -14,7 +14,7 @@ const styles = {
   xs: "text-muted px-1 py-0.5 bg-surface2 cursor-default",
 }
 ---
-<span class={twMerge(`font-mono text-xs rounded border border-line2 transition-colors text-nowrap ${styles[size]}`, className)}>
+<span class={twMerge(`font-mono text-xs rounded border border-line2 bg-surface2/80 text-ink transition-colors text-nowrap ${styles[size]}`, className)}>
   <slot />
   {label}
 </span>

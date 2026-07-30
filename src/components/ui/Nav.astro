@@ -2,16 +2,17 @@
 import CtaButton from "./CtaButton.astro"
 
 const navItems = [
-  { name: 'Experiencia', href: '/#experience', label: 'experience' },
-  { name: 'Proyectos', href: '/#projects', label: 'projects' },
-  { name: 'Sobre mí', href: '/#about', label: 'about' }
+  { name: 'Inicio', href: '/#home', label: 'home' },
+  { name: 'Servicios', href: '/#projects', label: 'projects' },
+  { name: 'Nosotros', href: '/#about', label: 'about' }
 ]
 ---
 
 <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-lg">
   <nav class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-center sm:justify-between">
-    <a href="/#home" class="hidden sm:inline-flex font-mono text-sm font-medium tracking-widest text-ink">
-      Chencho<span class="text-lime">34</span>
+    <a href="/#home" class="hidden sm:inline-flex items-center gap-3 font-mono text-sm font-medium tracking-widest text-ink">
+      <img src="/logo.png" alt="Triblan logo" class="h-8 w-auto rounded-full border border-line2 bg-surface" />
+      TRIBLAN
     </a>
     <ul class="flex sm:gap-8 gap-4 list-none items-center">
       {
@@ -42,10 +43,10 @@ const navItems = [
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll('section[id]')
-    const navLinks = document.querySelectorAll('nav ul li a')
+    const sections = document.querySelectorAll<HTMLElement>('section[id]')
+    const navLinks = document.querySelectorAll<HTMLAnchorElement>('nav ul li a')
     
-    const callback = (entries: []) => {
+    const callback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navLinks.forEach(link => {
