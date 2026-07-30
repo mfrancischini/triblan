@@ -6,7 +6,6 @@ export const experience: Experience[] = [
     company: 'Triblan Estudio Jurídico',
     link: 'https://triblan.com',
     modality: 'Presencial / Virtual',
-    period: '2010 - Presente',
     currentJob: true,
     exp: [
       'Nuestro propósito es acompañar a quienes confían en nosotras durante todo el proceso, ofreciendo un servicio jurídico cercano, transparente y comprometido con la búsqueda de soluciones eficaces.',
@@ -28,7 +27,7 @@ export const experience: Experience[] = [
     link: 'https://triblan.com',
     location: 'Olivos, Buenos Aires',
     modality: 'Presencial',
-    period: '2016 - Presente',
+
     currentJob: false,
     exp: [
       'En Estudio Jurídico Integral Triblan creemos que el ejercicio del Derecho va mucho más allá del conocimiento técnico: implica compromiso, cercanía y una verdadera vocación de servicio.',
