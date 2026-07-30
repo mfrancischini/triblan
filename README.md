@@ -1,6 +1,3 @@
-![hero](/public/previewpage.jpg)
-
-[![Astro](https://img.shields.io/badge/Astro-0C0F19?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/) [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/) [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
 # Triblan
 
@@ -67,32 +64,11 @@ src/
  
 Cada proyecto vive en su propia carpeta con un `index.md` y un `cover.webp`:
  
-```markdown
----
-title: "E-Commerce Platform UI"
-description: "Descripción del proyecto"
-image: "./cover.webp"
-technologies:
-  - React
-  - TypeScript
-  - TailwindCSS
-githubUrl: "https://github.com/Chencho34/..."
-demoUrl: "https://..."
-featured: true
-date: 2024-12-21
-type: "frontend"
-images:
-  - "https://raw.githubusercontent.com/..."
----
-```
  
 ## Instalación
  
 ```bash
-# Clonar el repositorio
-git clone https://github.com/Chencho34/portfolio-astro-2025.git
-cd portfolio-astro-2025
- 
+
 # Instalar dependencias
 pnpm install
 
