@@ -19,7 +19,7 @@ export const experience: Experience[] = [
       'Atención presencial en Olivos y consultas online en todo el país.',
       'En Triblan, la vocación por el Derecho y el compromiso con nuestros clientes son los pilares sobre los que construimos cada caso.',
     ],
-    technologies: ['Derecho Laboral', 'Defensa del Consumidor', 'Accidentes de Tránsito', 'Negociación', 'Litigios', 'Mediación'],
+    technologies: ['Derecho Laboral','Derecho Penal', 'Derecho Civil', 'Defensa del Consumidor', 'Accidentes de Tránsito', 'Accidentes de Trabajo', 'Sucesiones'],
   },
   {
     title: 'Nuestra Trayectoria',
