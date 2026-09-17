@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Container, Section } from "../components/ui";
+---
+
+<Layout
+  title="Contacto | Triblan Estudio Jurídico"
+  description="Completá el formulario de contacto de Triblan Estudio Jurídico para recibir asesoramiento legal personalizado."
+>
+  <Container>
+    <Section id="contacto-form" className="mt-24">
+      <article class="text-center mb-8">
+        <h1 class="font-serif font-bold leading-none tracking-tighter" style="font-size:clamp(2rem,7vw,3.5rem)">
+          Contacto
+        </h1>
+        <p class="mt-4 text-muted max-w-xl mx-auto leading-relaxed text-sm">
+          Completá el formulario y nos pondremos en contacto a la brevedad.
+        </p>
+      </article>
+
+      <div class="max-w-2xl mx-auto rounded-[1.5rem] border border-line2 bg-surface2/80 overflow-hidden">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSe-S1T92-b2GcL8F6qa64Wvn2J33sRJy7NfGvWN59NGz3JzGw/viewform?embedded=true"
+          class="w-full block"
+          style="height:1400px; border:0"
+          title="Formulario de contacto"
+        >Cargando…</iframe>
+      </div>
+    </Section>
+  </Container>
+</Layout>
